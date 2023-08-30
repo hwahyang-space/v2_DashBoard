@@ -17,15 +17,7 @@ import AuthenticationFooter from '@/components/AuthenticationFooter.vue';
 									<h3 class="font-weight-bolder text-primary text-gradient Pretendard-Black">Welcome back!</h3>
 									<p class="mb-0 Pretendard-Medium">Sign In is required to continue.</p>
 								</div>
-								<div class="alert alert-warning alert-dismissible fade show" role="alert" id="warnBox" style="display: none;">
-									<span class="alert-icon">
-										<i aria-hidden class="fa-solid fa-triangle-exclamation"></i>
-									</span>
-									<span class="alert-text Pretendard-Medium" id="warnText"><strong>Warning!</strong> This is a warning alert—check it out!</span>
-									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
+								<div id="warnBoxParent"></div>
 								<div class="card-body">
 									<form role="form" @submit.prevent="onSubmit(name, email, password, passwordConfirm, approvalCode, agreeTerms)">
 										<div class="mb-3">
