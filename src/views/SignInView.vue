@@ -73,10 +73,6 @@ form > label {
 form > div {
 	font-family: Pretendard_Medium, sans-serif, arial !important;
 }
-.alert {
-	margin: 15px 15px 0;
-	color: white;
-}
 </style>
 
 <script lang="ts">
