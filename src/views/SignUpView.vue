@@ -27,24 +27,24 @@ import AuthenticationFooter from '@/components/AuthenticationFooter.vue';
 									</button>
 								</div>
 								<div class="card-body">
-									<form role="form">
+									<form role="form" @submit.prevent="onSubmit(name, email, password, passwordConfirm, approvalCode, agreeTerms)">
 										<div class="mb-3">
-											<input type="text" class="form-control" placeholder="Name" aria-label="Name"/>
+											<input type="text" v-model="name" class="form-control" placeholder="Name" aria-label="Name"/>
 										</div>
 										<div class="mb-3">
-											<input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon"/>
+											<input type="email" v-model="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon"/>
 										</div>
 										<div class="mb-3">
-											<input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon"/>
+											<input type="password" v-model="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon"/>
 										</div>
 										<div class="mb-3">
-											<input type="password" class="form-control" placeholder="Password Confirm" aria-label="Password Confirm" aria-describedby="password-addon"/>
+											<input type="password" v-model="passwordConfirm" class="form-control" placeholder="Password Confirm" aria-label="Password Confirm" aria-describedby="password-addon"/>
 										</div>
 										<div class="mb-3">
-											<input type="text" class="form-control" placeholder="Approval Code" aria-label="Approval Code" aria-describedby="password-addon"/>
+											<input type="text" v-model="approvalCode" class="form-control" placeholder="Approval Code" aria-label="Approval Code" aria-describedby="password-addon"/>
 										</div>
 										<div class="form-check form-check-info">
-											<input type="checkbox" class="form-check-input" id="acceptTerms"/>
+											<input type="checkbox" v-model="agreeTerms" class="form-check-input" id="acceptTerms"/>
 											<label class="form-check-label" htmlFor="acceptTerms">
 												I agree the <a href="#" class="text-dark font-weight-bolder">Terms and Conditions</a>
 											</label>
@@ -85,3 +85,79 @@ form > div {
     color: white;
 }
 </style>
+
+<script lang="ts">
+import { createApp, type App } from 'vue';
+
+import { useSessionAuthStore, signUp } from '../stores/authManager';
+
+import StatusCode from '../stores/templates/StatusCode';
+import type { ITokenResponse } from '../stores/templates/ITokenResponse';
+import { useLoaderState } from '@/stores/isLoading';
+
+import AuthenticationAlert from '@/components/AuthenticationAlert.vue';
+
+let activeApp: App<Element> | null = null;
+
+export default {
+	name: 'SignIn',
+	data: () => ({
+		name: '',
+		email: '',
+		password: '',
+		passwordConfirm: '',
+		approvalCode: '',
+		agreeTerms: false,
+	}),
+	methods: {
+		async onSubmit(name: string, email: string, password: string, passwordConfirm: string, approvalCode: string, agreeTerms: boolean) {
+			const isLoading = useLoaderState();
+			const { changeStateTrue, changeStateFalse } = isLoading;
+
+			changeStateTrue();
+
+			try {
+				const rawResponse = await signUp(name, email, password, passwordConfirm, approvalCode, agreeTerms);
+				if (rawResponse instanceof StatusCode) {
+					const response = rawResponse as StatusCode;
+					console.error(response);
+					showAlert('Error', `${response.userDescription}`);
+					changeStateFalse();
+				} else {
+					const response = rawResponse as ITokenResponse;
+
+					const sessionAuthStore = useSessionAuthStore();
+					sessionAuthStore.setAccessToken(response.accessToken);
+					sessionAuthStore.setRefreshToken(response.refreshToken);
+
+					window.location.href = '/';
+				}
+			} catch (error) {
+				console.error(error);
+				if (error instanceof Error) {
+					const err = error as Error;
+					showAlert('Error', err.message);
+				} else {
+					showAlert('Error', 'Unknown error.');
+				}
+				changeStateFalse();
+			}
+		},
+	},
+};
+
+const showAlert = (title: string, message: string) => {
+	if (activeApp !== null) {
+		activeApp.unmount();
+		activeApp = null;
+	}
+
+	const app = createApp(AuthenticationAlert, {
+		title,
+		message
+	});
+	app.mount("#warnBoxParent");
+
+	activeApp = app;
+}
+</script>
