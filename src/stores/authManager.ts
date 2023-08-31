@@ -78,7 +78,6 @@ const signUp = async (
 		if (response.status !== 200) {
 			return response.data as StatusCode;
 		} else {
-			console.log(response);
 			return response.data as ITokenResponse;
 		}
 	} catch (error) {
