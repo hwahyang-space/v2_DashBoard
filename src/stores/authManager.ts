@@ -7,7 +7,7 @@ import type { ITokenResponse } from './templates/ITokenResponse';
 const signIn = async (email: string, password: string): Promise<StatusCode | ITokenResponse> => {
 	try {
 		const response = await axios.post(
-			'https://api.hwahyang.space/v2/authorize/signIn',
+			'https://api.hwahyang.space/api/v2/authorize/signIn',
 			{
 				email,
 				password,
@@ -59,7 +59,7 @@ const signUp = async (
 	}
 	try {
 		const response = await axios.post(
-			'https://api.hwahyang.space/v2/authorize/signUp',
+			'https://api.hwahyang.space/api/v2/authorize/signUp',
 			{
 				name: userName,
 				email,
