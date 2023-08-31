@@ -11,6 +11,7 @@ import { useLoaderState } from '@/stores/isLoading';
 import RootView from '../views/RootView.vue';
 import SignInView from '../views/SignInView.vue';
 import SignUpView from '../views/SignUpView.vue';
+import SignOutView from '../views/SignOutView.vue';
 
 enum DefineAuthType {
 	None,
@@ -39,6 +40,11 @@ const router = createRouter({
 			component: SignUpView,
 			meta: { authRequired: DefineAuthType.Guest },
 		},
+		{
+			path: '/authentication/signOut',
+			name: 'signOut',
+			component: SignOutView,
+			meta: { authRequired: DefineAuthType.None },
 		},
 	],
 });
