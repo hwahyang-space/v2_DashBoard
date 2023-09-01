@@ -131,33 +131,31 @@ const router = createRouter({
 });
 
 router.beforeEach(
-	async (
-		to: RouteLocationNormalized,
-		from: RouteLocationNormalized,
-		next: NavigationGuardNext
-	) => {
+	(to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
 		const isLoading = useLoaderState();
 		const { changeStateTrue } = isLoading;
 
 		changeStateTrue();
 
-		if (to.matched.some((routeInfo) => routeInfo.meta.authRequired == DefineAuthType.Auth)) {
-			if (await isAuthenticated()) {
-				next();
+		setTimeout(async () => {
+			const authenticated = await isAuthenticated();
+
+			if (to.meta.authRequired === DefineAuthType.Auth) {
+				if (authenticated) {
+					next();
+				} else {
+					next('/authentication/signIn');
+				}
+			} else if (to.meta.authRequired === DefineAuthType.Guest) {
+				if (authenticated) {
+					next('/');
+				} else {
+					next();
+				}
 			} else {
-				next('/authentication/signOut');
-			}
-		} else if (
-			to.matched.some((routeInfo) => routeInfo.meta.authRequired == DefineAuthType.Guest)
-		) {
-			if (await isAuthenticated()) {
-				next('/');
-			} else {
 				next();
 			}
-		} else {
-			next();
-		}
+		}, 250);
 	}
 );
 router.afterEach((to: RouteLocationNormalized, from: RouteLocationNormalized) => {
