@@ -9,6 +9,8 @@ import { isAuthenticated } from '@/stores/authManager';
 import { useLoaderState } from '@/stores/isLoading';
 
 import RootView from '../views/RootView.vue';
+import NotFoundView from '../views/NotFoundView.vue';
+
 import dashboardRootView from '../views/dashboard/DashboardRootView.vue';
 
 import mainAnalyticsView from '../views/dashboard/Main/mainAnalyticsView.vue';
@@ -118,6 +120,11 @@ const router = createRouter({
 			path: '/authentication/signOut',
 			name: 'signOut',
 			component: SignOutView,
+			meta: { authRequired: DefineAuthType.None },
+		},
+		{
+			path: '/:pathMatch(.*)*',
+			component: NotFoundView,
 			meta: { authRequired: DefineAuthType.None },
 		},
 	],
