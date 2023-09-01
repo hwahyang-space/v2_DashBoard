@@ -9,9 +9,23 @@ import { isAuthenticated } from '@/stores/authManager';
 import { useLoaderState } from '@/stores/isLoading';
 
 import RootView from '../views/RootView.vue';
-import SignInView from '../views/SignInView.vue';
-import SignUpView from '../views/SignUpView.vue';
-import SignOutView from '../views/SignOutView.vue';
+import dashboardRootView from '../views/dashboard/DashboardRootView.vue';
+
+import mainAnalyticsView from '../views/dashboard/Main/mainAnalyticsView.vue';
+import mainAboutView from '../views/dashboard/Main/mainAboutView.vue';
+
+import portfolioAnalyticsView from '../views/dashboard/Portfolio/portfolioAnalyticsView.vue';
+import portfolioEditCoverView from '../views/dashboard/Portfolio/portfolioEditCoverView.vue';
+import portfolioAboutView from '../views/dashboard/Portfolio/portfolioAboutView.vue';
+import portfolioServicesView from '../views/dashboard/Portfolio/portfolioServicesView.vue';
+import portfolioArticlesView from '../views/dashboard/Portfolio/portfolioArticlesView.vue';
+
+import dashboardAnalyticsView from '../views/dashboard/Dashboard/dashboardAnalyticsView.vue';
+import dashboardMyAccountView from '../views/dashboard/Dashboard/dashboardMyAccountView.vue';
+
+import SignInView from '../views/authentication/SignInView.vue';
+import SignUpView from '../views/authentication/SignUpView.vue';
+import SignOutView from '../views/authentication/SignOutView.vue';
 
 enum DefineAuthType {
 	None,
@@ -26,6 +40,66 @@ const router = createRouter({
 			path: '/',
 			name: 'root',
 			component: RootView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard',
+			name: 'dashboardRoot',
+			component: dashboardRootView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Main/analytics',
+			name: 'dashboardMainAnalytics',
+			component: mainAnalyticsView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Main/about',
+			name: 'dashboardMainAbout',
+			component: mainAboutView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Portfolio/analytics',
+			name: 'dashboardPortfolioAnalytics',
+			component: portfolioAnalyticsView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Portfolio/cover',
+			name: 'dashboardPortfolioCover',
+			component: portfolioEditCoverView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Portfolio/about',
+			name: 'dashboardPortfolioAbout',
+			component: portfolioAboutView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Portfolio/services',
+			name: 'dashboardPortfolioServices',
+			component: portfolioServicesView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Portfolio/articles',
+			name: 'dashboardPortfolioArticles',
+			component: portfolioArticlesView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Dashboard/analytics',
+			name: 'dashboardDashboardAnalytics',
+			component: dashboardAnalyticsView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Dashboard/me',
+			name: 'dashboardDashboardMyAccount',
+			component: dashboardMyAccountView,
 			meta: { authRequired: DefineAuthType.Auth },
 		},
 		{

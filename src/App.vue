@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
 
-import { useLoaderState } from "./stores/isLoading";
+import { useLoaderState } from './stores/isLoading';
 
 import PreloaderView from './views/PreloaderView.vue';
 
