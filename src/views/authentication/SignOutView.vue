@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSessionAuthStore, useLocalAuthStore } from '../stores/authManager';
+import { useSessionAuthStore, useLocalAuthStore } from '../../stores/authManager';
 
 const localAuthStore = useLocalAuthStore();
 const sessionAuthStore = useSessionAuthStore();
@@ -7,7 +7,7 @@ const sessionAuthStore = useSessionAuthStore();
 localAuthStore.removeAll();
 sessionAuthStore.removeAll();
 
-window.location.href = '/authentication/signIn'
+window.location.href = '/authentication/signIn';
 </script>
 
 <template>

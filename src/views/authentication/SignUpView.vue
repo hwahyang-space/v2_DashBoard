@@ -1,7 +1,17 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
-import AuthenticationHeader from '@/components/AuthenticationHeader.vue';
-import AuthenticationFooter from '@/components/AuthenticationFooter.vue';
+import AuthenticationHeader from '@/components/authentication/AuthenticationHeader.vue';
+import AuthenticationFooter from '@/components/authentication/AuthenticationFooter.vue';
+
+import { createApp, type App } from 'vue';
+
+import { useSessionAuthStore, signUp } from '../../stores/authManager';
+
+import StatusCode from '../../stores/templates/StatusCode';
+import type { ITokenResponse } from '../../stores/templates/ITokenResponse';
+import { useLoaderState } from '@/stores/isLoading';
+
+import AuthenticationAlert from '@/components/authentication/AuthenticationAlert.vue';
 </script>
 
 <template>
@@ -75,16 +85,6 @@ form > div {
 </style>
 
 <script lang="ts">
-import { createApp, type App } from 'vue';
-
-import { useSessionAuthStore, signUp } from '../stores/authManager';
-
-import StatusCode from '../stores/templates/StatusCode';
-import type { ITokenResponse } from '../stores/templates/ITokenResponse';
-import { useLoaderState } from '@/stores/isLoading';
-
-import AuthenticationAlert from '@/components/AuthenticationAlert.vue';
-
 let activeApp: App<Element> | null = null;
 
 export default {
