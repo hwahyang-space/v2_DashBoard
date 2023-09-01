@@ -24,8 +24,8 @@ import AuthenticationAlert from '@/components/authentication/AuthenticationAlert
 						<div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
 							<div class="card card-plain mt-8">
 								<div class="card-header pb-0 text-left bg-transparent">
-									<h3 class="font-weight-bolder text-primary text-gradient Pretendard-Black">Welcome back!</h3>
-									<p class="mb-0 Pretendard-Medium">Sign In is required to continue.</p>
+									<h3 class="font-weight-bolder text-primary text-gradient Pretendard-Black">Welcome!</h3>
+									<p class="mb-0 Pretendard-Medium">Sign Up is required to continue.</p>
 								</div>
 								<div id="warnBoxParent"></div>
 								<div class="card-body">
