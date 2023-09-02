@@ -15,6 +15,7 @@ import dashboardRootView from '../views/dashboard/DashboardRootView.vue';
 
 import mainAnalyticsView from '../views/dashboard/Main/mainAnalyticsView.vue';
 import mainAboutView from '../views/dashboard/Main/mainAboutView.vue';
+import mainLinksView from '../views/dashboard/Main/mainLinksView.vue';
 
 import portfolioAnalyticsView from '../views/dashboard/Portfolio/portfolioAnalyticsView.vue';
 import portfolioEditCoverView from '../views/dashboard/Portfolio/portfolioEditCoverView.vue';
@@ -62,6 +63,12 @@ const router = createRouter({
 			path: '/dashboard/Main/about',
 			name: 'dashboardMainAbout',
 			component: mainAboutView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Main/links',
+			name: 'dashboardMainLinks',
+			component: mainLinksView,
 			meta: { authRequired: DefineAuthType.Auth },
 		},
 		{

@@ -47,6 +47,14 @@ const props = defineProps(['active']);
 						<span class="nav-link-text ms-1">Edit About</span>
 					</RouterLink>
 				</li>
+				<li class="nav-item">
+					<RouterLink to="/dashboard/Main/links" class="nav-link" :class="{'active': props.active === 'dashboard-main-links' }">
+						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+							<i class="fa-solid fa-link"></i>
+						</div>
+						<span class="nav-link-text ms-1">Edit Links</span>
+					</RouterLink>
+				</li>
 				
 				<li class="nav-item mt-3">
 					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">pf.hwahyang.space</h6>
