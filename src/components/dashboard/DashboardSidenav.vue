@@ -111,6 +111,22 @@ const props = defineProps(['active']);
 						<span class="nav-link-text ms-1">My Account</span>
 					</RouterLink>
 				</li>
+				<li class="nav-item">
+					<RouterLink to="/dashboard/DashBoard/accounts" class="nav-link" :class="{'active': props.active === 'dashboard-dashboard-accounts' }">
+						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+							<i class="fa-solid fa-users"></i>
+						</div>
+						<span class="nav-link-text ms-1">Manage Accounts</span>
+					</RouterLink>
+				</li>
+				<li class="nav-item">
+					<RouterLink to="/dashboard/DashBoard/approvalCodes" class="nav-link" :class="{'active': props.active === 'dashboard-dashboard-approvalCodes' }">
+						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+							<i class="fa-solid fa-ticket"></i>
+						</div>
+						<span class="nav-link-text ms-1">Manage Approval Codes</span>
+					</RouterLink>
+				</li>
 			</ul>
 		</div>
 	</aside>

@@ -24,6 +24,8 @@ import portfolioArticlesView from '../views/dashboard/Portfolio/portfolioArticle
 
 import dashboardAnalyticsView from '../views/dashboard/Dashboard/dashboardAnalyticsView.vue';
 import dashboardMyAccountView from '../views/dashboard/Dashboard/dashboardMyAccountView.vue';
+import dashboardManageAccountsView from '../views/dashboard/Dashboard/dashboardManageAccountsView.vue';
+import dashboardManageApprovalCodes from '../views/dashboard/Dashboard/dashboardManageApprovalCodes.vue';
 
 import SignInView from '../views/authentication/SignInView.vue';
 import SignUpView from '../views/authentication/SignUpView.vue';
@@ -102,6 +104,18 @@ const router = createRouter({
 			path: '/dashboard/Dashboard/me',
 			name: 'dashboardDashboardMyAccount',
 			component: dashboardMyAccountView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Dashboard/accounts',
+			name: 'dashboardDashboardManageAccounts',
+			component: dashboardManageAccountsView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Dashboard/approvalCodes',
+			name: 'dashboardDashboardManageApprovalCodes',
+			component: dashboardManageApprovalCodes,
 			meta: { authRequired: DefineAuthType.Auth },
 		},
 		{
