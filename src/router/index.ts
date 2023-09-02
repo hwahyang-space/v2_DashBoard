@@ -23,6 +23,10 @@ import portfolioAboutView from '../views/dashboard/Portfolio/portfolioAboutView.
 import portfolioServicesView from '../views/dashboard/Portfolio/portfolioServicesView.vue';
 import portfolioArticlesView from '../views/dashboard/Portfolio/portfolioArticlesView.vue';
 
+import blogAnalyticsView from '../views/dashboard/Blog/blogAnalyticsView.vue';
+import blogCategoryView from '../views/dashboard/Blog/blogCategoryView.vue';
+import blogPostsView from '../views/dashboard/Blog/blogPostsView.vue';
+
 import dashboardAnalyticsView from '../views/dashboard/Dashboard/dashboardAnalyticsView.vue';
 import dashboardMyAccountView from '../views/dashboard/Dashboard/dashboardMyAccountView.vue';
 import dashboardManageAccountsView from '../views/dashboard/Dashboard/dashboardManageAccountsView.vue';
@@ -99,6 +103,24 @@ const router = createRouter({
 			path: '/dashboard/Portfolio/articles',
 			name: 'dashboardPortfolioArticles',
 			component: portfolioArticlesView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Blog/analytics',
+			name: 'dashboardBlogAnalytics',
+			component: blogAnalyticsView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Blog/category',
+			name: 'dashboardBlogCategory',
+			component: blogCategoryView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Blog/posts',
+			name: 'dashboardBlogPosts',
+			component: blogPostsView,
 			meta: { authRequired: DefineAuthType.Auth },
 		},
 		{

@@ -101,6 +101,34 @@ const props = defineProps(['active']);
 				</li>
 
 				<li class="nav-item mt-3">
+					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">blog.hwahyang.space</h6>
+				</li>
+				<li class="nav-item">
+					<RouterLink to="/dashboard/Blog/analytics" class="nav-link" :class="{'active': props.active === 'dashboard-blog-analytics' }">
+						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+							<i class="fa-solid fa-chart-line"></i>
+						</div>
+						<span class="nav-link-text ms-1">Analytics</span>
+					</RouterLink>
+				</li>
+				<li class="nav-item">
+					<RouterLink to="/dashboard/Blog/category" class="nav-link" :class="{'active': props.active === 'dashboard-blog-category' }">
+						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+							<i class="fa-solid fa-list-ul"></i>
+						</div>
+						<span class="nav-link-text ms-1">Manage Category</span>
+					</RouterLink>
+				</li>
+				<li class="nav-item">
+					<RouterLink to="/dashboard/Blog/posts" class="nav-link" :class="{'active': props.active === 'dashboard-blog-posts' }">
+						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+							<i class="fa-solid fa-file-lines"></i>
+						</div>
+						<span class="nav-link-text ms-1">Manage Posts</span>
+					</RouterLink>
+				</li>
+
+				<li class="nav-item mt-3">
 					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">dash.hwahyang.space</h6>
 				</li>
 				<li class="nav-item">
