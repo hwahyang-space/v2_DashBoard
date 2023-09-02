@@ -16,7 +16,7 @@ const isLoading = useLoaderState();
 <style>
 * {
 	scrollbar-width: thin;
-	scrollbar-color: #b268dd;
+	scrollbar-color: #ce98ee;
 }
 
 *::-webkit-scrollbar {
@@ -28,7 +28,7 @@ const isLoading = useLoaderState();
 }
 
 *::-webkit-scrollbar-thumb {
-	background: #b268dd;
+	background: #ce98ee;
 	border: 7px solid transparent;
 	border-radius: 10px;
 }
