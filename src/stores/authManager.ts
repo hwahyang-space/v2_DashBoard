@@ -192,48 +192,55 @@ const isAuthenticated = async (): Promise<boolean> => {
 			if (validateResponse.status === 200) {
 				return true;
 			} else {
-				try {
-					const refreshToken =
-						localAuthStore.refreshToken !== ''
-							? localAuthStore.refreshToken
-							: sessionAuthStore.refreshToken;
-					const refreshResponse = await axios.post(
-						'https://api.hwahyang.space/api/v2/authorize/refresh',
-						{},
-						{
-							headers: {
-								'Cache-Control': 'no-store',
-								'Pragma': 'no-store',
-								'Expires': '0',
-								'Authorization': `Bearer ${refreshToken}`,
-							},
-						}
-					);
-					if (refreshResponse.status === 200) {
-						const data = refreshResponse.data as ITokenResponse;
-						if (
-							localAuthStore.accessToken !== '' &&
-							localAuthStore.refreshToken !== ''
-						) {
-							localAuthStore.setAccessToken(data.accessToken);
-							localAuthStore.setRefreshToken(data.refreshToken);
-							return true;
-						} else {
-							sessionAuthStore.setAccessToken(data.accessToken);
-							sessionAuthStore.setRefreshToken(data.refreshToken);
-							return true;
-						}
-					} else {
-						return false;
-					}
-				} catch (error) {
-					return false;
-				}
+				return await tryRefresh();
 			}
 		} catch (error) {
-			return false;
+			return await tryRefresh();
+			//return false;
 		}
 	}
 };
+
+const tryRefresh = async (): Promise<boolean> => {
+	const localAuthStore = useLocalAuthStore();
+	const sessionAuthStore = useSessionAuthStore();
+	try {
+		const refreshToken =
+			localAuthStore.refreshToken !== ''
+				? localAuthStore.refreshToken
+				: sessionAuthStore.refreshToken;
+		const refreshResponse = await axios.post(
+			'https://api.hwahyang.space/api/v2/authorize/refresh',
+			{},
+			{
+				headers: {
+					'Cache-Control': 'no-store',
+					'Pragma': 'no-store',
+					'Expires': '0',
+					'Authorization': `Bearer ${refreshToken}`,
+				},
+			}
+		);
+		if (refreshResponse.status === 200) {
+			const data = refreshResponse.data as ITokenResponse;
+			if (
+				localAuthStore.accessToken !== '' &&
+				localAuthStore.refreshToken !== ''
+			) {
+				localAuthStore.setAccessToken(data.accessToken);
+				localAuthStore.setRefreshToken(data.refreshToken);
+				return true;
+			} else {
+				sessionAuthStore.setAccessToken(data.accessToken);
+				sessionAuthStore.setRefreshToken(data.refreshToken);
+				return true;
+			}
+		} else {
+			return false;
+		}
+	} catch (error) {
+		return false;
+	}
+}
 
 export { useSessionAuthStore, useLocalAuthStore, signIn, signUp, isAuthenticated };
