@@ -34,17 +34,17 @@ import AuthenticationAlert from '@/components/authentication/AuthenticationAlert
 								<div id="warnBoxParent"></div>
 								<div class="card-body">
 									<form role="form" @submit.prevent="onSubmit(email, password)">
-										<label>Email</label>
+										<label for="email">Email</label>
 										<div class="mb-3">
-											<input type="email" v-model="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon" />
+											<input type="email" v-model="email" id="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon" />
 										</div>
-										<label>Password</label>
+										<label for="password">Password</label>
 										<div class="mb-3">
-											<input type="password" v-model="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" />
+											<input type="password" v-model="password" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" />
 										</div>
 										<div class="form-check form-switch">
 											<input class="form-check-input" type="checkbox" v-model="rememberMe" id="rememberMe" />
-											<label class="form-check-label" htmlFor="rememberMe">Remember me</label>
+											<label class="form-check-label" for="rememberMe">Remember me</label>
 										</div>
 										<div class="text-center Pretendard-Bold">
 											<button type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0">
