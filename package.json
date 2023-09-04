@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "hwahyang.space v2 dashboard",
   "scripts": {
-    "update-dependencies": "npx ncu -u && npm i -D --save",
+    "update-dependencies": "npm i -g npm-check-updates@latest && npx ncu -u && npm i -D --save",
     "dev": "vite",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
