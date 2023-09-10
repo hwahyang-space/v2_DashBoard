@@ -12,6 +12,12 @@ import type { ITokenResponse } from '../../stores/templates/ITokenResponse';
 import { useLoaderState } from '@/stores/isLoading';
 
 import AuthenticationAlert from '@/components/authentication/AuthenticationAlert.vue';
+
+const regex = /^(\/|https?:\/\/(?:\*\.|)(?:hwahyang\.space|\w+\.\w+\.hwahyang\.space))$/;
+
+const urlParams = new URLSearchParams(window.location.search);
+let redirect = urlParams.get('redirect');
+if (!redirect || !regex.test(redirect)) redirect = '/';
 </script>
 
 <template>
@@ -120,7 +126,7 @@ export default {
 						sessionAuthStore.setAccessToken(response.accessToken);
 						sessionAuthStore.setRefreshToken(response.refreshToken);
 					}
-					window.location.href = '/';
+					window.location.href = redirect ?? '/';
 				}
 			} catch (error) {
 				console.error(error);

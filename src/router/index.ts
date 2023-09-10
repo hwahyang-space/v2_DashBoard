@@ -187,7 +187,7 @@ router.beforeEach(
 				if (authenticated) {
 					next();
 				} else {
-					next('/authentication/signIn');
+					next(`/authentication/signIn?redirect=${to.path}`);
 				}
 			} else if (to.meta.authRequired === DefineAuthType.Guest) {
 				if (authenticated) {
