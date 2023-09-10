@@ -21,13 +21,13 @@ import { RouterLink } from 'vue-router';
 						<div class="collapse navbar-collapse Pretendard-Medium" id="navigation">
 							<ul class="navbar-nav mx-auto ms-xl-auto me-xl-7" id="navbarParent">
 								<li class="nav-item">
-									<a class="nav-link me-2" href="https://hwahyang.space" target="_blank">
+									<a class="nav-link me-2" href="https://hwahyang.space">
 										<i aria-hidden class="fa-solid fa-house opacity-6 me-1"></i>
 										Homepage
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link d-flex align-items-center me-2 active" href="https://pf.hwahyang.space" target="_blank">
+									<a class="nav-link d-flex align-items-center me-2 active" href="https://pf.hwahyang.space">
 										<i aria-hidden class="fa fa-chart-pie opacity-6 me-1"></i>
 										Portfolio
 									</a>
