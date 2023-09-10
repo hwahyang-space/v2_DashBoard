@@ -5,7 +5,7 @@ import DashboardFooterView from '@/components/dashboard/DashboardFooter.vue';
 
 import { createApp, type App, ref } from 'vue';
 
-import StatusCode from '../../../stores/templates/StatusCode';
+import StatusCode from '@/stores/templates/StatusCode';
 import { useLoaderState } from '@/stores/isLoading';
 
 import DashboardAlert from '@/components/dashboard/DashboardAlert.vue';

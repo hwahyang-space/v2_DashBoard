@@ -8,33 +8,33 @@ import {
 import { isAuthenticated } from '@/stores/authManager';
 import { useLoaderState } from '@/stores/isLoading';
 
-import RootView from '../views/RootView.vue';
-import NotFoundView from '../views/NotFoundView.vue';
+import RootView from '@/views/RootView.vue';
+import NotFoundView from '@/views/NotFoundView.vue';
 
-import dashboardRootView from '../views/dashboard/DashboardRootView.vue';
+import dashboardRootView from '@/views/dashboard/DashboardRootView.vue';
 
-import mainAnalyticsView from '../views/dashboard/Main/mainAnalyticsView.vue';
-import mainAboutView from '../views/dashboard/Main/mainAboutView.vue';
-import mainLinksView from '../views/dashboard/Main/mainLinksView.vue';
+import mainAnalyticsView from '@/views/dashboard/Main/mainAnalyticsView.vue';
+import mainAboutView from '@/views/dashboard/Main/mainAboutView.vue';
+import mainLinksView from '@/views/dashboard/Main/mainLinksView.vue';
 
-import portfolioAnalyticsView from '../views/dashboard/Portfolio/portfolioAnalyticsView.vue';
-import portfolioEditCoverView from '../views/dashboard/Portfolio/portfolioEditCoverView.vue';
-import portfolioAboutView from '../views/dashboard/Portfolio/portfolioAboutView.vue';
-import portfolioServicesView from '../views/dashboard/Portfolio/portfolioServicesView.vue';
-import portfolioArticlesView from '../views/dashboard/Portfolio/portfolioArticlesView.vue';
+import portfolioAnalyticsView from '@/views/dashboard/Portfolio/portfolioAnalyticsView.vue';
+import portfolioEditCoverView from '@/views/dashboard/Portfolio/portfolioEditCoverView.vue';
+import portfolioAboutView from '@/views/dashboard/Portfolio/portfolioAboutView.vue';
+import portfolioServicesView from '@/views/dashboard/Portfolio/portfolioServicesView.vue';
+import portfolioArticlesView from '@/views/dashboard/Portfolio/portfolioArticlesView.vue';
 
-import blogAnalyticsView from '../views/dashboard/Blog/blogAnalyticsView.vue';
-import blogCategoryView from '../views/dashboard/Blog/blogCategoryView.vue';
-import blogPostsView from '../views/dashboard/Blog/blogPostsView.vue';
+import blogAnalyticsView from '@/views/dashboard/Blog/blogAnalyticsView.vue';
+import blogCategoryView from '@/views/dashboard/Blog/blogCategoryView.vue';
+import blogPostsView from '@/views/dashboard/Blog/blogPostsView.vue';
 
-import dashboardAnalyticsView from '../views/dashboard/Dashboard/dashboardAnalyticsView.vue';
-import dashboardMyAccountView from '../views/dashboard/Dashboard/dashboardMyAccountView.vue';
-import dashboardManageAccountsView from '../views/dashboard/Dashboard/dashboardManageAccountsView.vue';
-import dashboardManageApprovalCodes from '../views/dashboard/Dashboard/dashboardManageApprovalCodes.vue';
+import dashboardAnalyticsView from '@/views/dashboard/Dashboard/dashboardAnalyticsView.vue';
+import dashboardMyAccountView from '@/views/dashboard/Dashboard/dashboardMyAccountView.vue';
+import dashboardManageAccountsView from '@/views/dashboard/Dashboard/dashboardManageAccountsView.vue';
+import dashboardManageApprovalCodes from '@/views/dashboard/Dashboard/dashboardManageApprovalCodes.vue';
 
-import SignInView from '../views/authentication/SignInView.vue';
-import SignUpView from '../views/authentication/SignUpView.vue';
-import SignOutView from '../views/authentication/SignOutView.vue';
+import SignInView from '@/views/authentication/SignInView.vue';
+import SignUpView from '@/views/authentication/SignUpView.vue';
+import SignOutView from '@/views/authentication/SignOutView.vue';
 
 enum DefineAuthType {
 	None,

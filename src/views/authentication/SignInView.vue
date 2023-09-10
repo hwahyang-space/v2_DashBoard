@@ -5,10 +5,10 @@ import AuthenticationFooter from '@/components/authentication/AuthenticationFoot
 
 import { createApp, type App } from 'vue';
 
-import { useSessionAuthStore, useLocalAuthStore, signIn } from '../../stores/authManager';
+import { useSessionAuthStore, useLocalAuthStore, signIn } from '@/stores/authManager';
 
-import StatusCode from '../../stores/templates/StatusCode';
-import type { ITokenResponse } from '../../stores/templates/ITokenResponse';
+import StatusCode from '@/stores/templates/StatusCode';
+import type { ITokenResponse } from '@/stores/templates/ITokenResponse';
 import { useLoaderState } from '@/stores/isLoading';
 
 import AuthenticationAlert from '@/components/authentication/AuthenticationAlert.vue';
@@ -150,10 +150,10 @@ const showAlert = (title: string, message: string) => {
 
 	const app = createApp(AuthenticationAlert, {
 		title,
-		message
+		message,
 	});
-	app.mount("#warnBoxParent");
+	app.mount('#warnBoxParent');
 
 	activeApp = app;
-}
+};
 </script>

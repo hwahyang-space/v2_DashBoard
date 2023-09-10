@@ -5,10 +5,10 @@ import AuthenticationFooter from '@/components/authentication/AuthenticationFoot
 
 import { createApp, type App } from 'vue';
 
-import { useSessionAuthStore, signUp } from '../../stores/authManager';
+import { useSessionAuthStore, signUp } from '@/stores/authManager';
 
-import StatusCode from '../../stores/templates/StatusCode';
-import type { ITokenResponse } from '../../stores/templates/ITokenResponse';
+import StatusCode from '@/stores/templates/StatusCode';
+import type { ITokenResponse } from '@/stores/templates/ITokenResponse';
 import { useLoaderState } from '@/stores/isLoading';
 
 import AuthenticationAlert from '@/components/authentication/AuthenticationAlert.vue';

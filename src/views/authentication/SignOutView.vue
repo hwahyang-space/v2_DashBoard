@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSessionAuthStore, useLocalAuthStore } from '../../stores/authManager';
+import { useSessionAuthStore, useLocalAuthStore } from '@/stores/authManager';
 
 const regex = /^(\/|https?:\/\/(?:\*\.|)(?:hwahyang\.space|\w+\.\w+\.hwahyang\.space))$/;
 
