@@ -12,12 +12,6 @@ import type { ITokenResponse } from '@/stores/templates/ITokenResponse';
 import { useLoaderState } from '@/stores/isLoading';
 
 import AuthenticationAlert from '@/components/authentication/AuthenticationAlert.vue';
-
-const regex = /^(\/|https?:\/\/(?:\*\.|)(?:hwahyang\.space|\w+\.\w+\.hwahyang\.space))$/;
-
-const urlParams = new URLSearchParams(window.location.search);
-let redirect = urlParams.get('redirect');
-if (!redirect || !regex.test(redirect)) redirect = '/';
 </script>
 
 <template>
@@ -93,6 +87,7 @@ form > div {
 
 <script lang="ts">
 let activeApp: App<Element> | null = null;
+const regex = /^(\/|https?:\/\/(?:\*\.|)(?:hwahyang\.space|\w+\.\w+\.hwahyang\.space))$/;
 
 export default {
 	name: 'SignIn',
@@ -126,6 +121,11 @@ export default {
 						sessionAuthStore.setAccessToken(response.accessToken);
 						sessionAuthStore.setRefreshToken(response.refreshToken);
 					}
+
+					const urlParams = new URLSearchParams(window.location.search);
+					let redirect = urlParams.get('redirect');
+					if (!redirect || !regex.test(redirect)) redirect = '/';
+					
 					window.location.href = redirect ?? '/';
 				}
 			} catch (error) {
