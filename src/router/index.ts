@@ -29,6 +29,7 @@ import blogPostsView from '@/views/dashboard/Blog/blogPostsView.vue';
 
 import dashboardAnalyticsView from '@/views/dashboard/Dashboard/dashboardAnalyticsView.vue';
 import dashboardMyAccountView from '@/views/dashboard/Dashboard/dashboardMyAccountView.vue';
+import dashboardManageFilesView from '@/views/dashboard/Dashboard/dashboardManageFilesView.vue';
 import dashboardManageAccountsView from '@/views/dashboard/Dashboard/dashboardManageAccountsView.vue';
 import dashboardManageApprovalCodes from '@/views/dashboard/Dashboard/dashboardManageApprovalCodes.vue';
 
@@ -139,6 +140,12 @@ const router = createRouter({
 			path: '/dashboard/Dashboard/accounts',
 			name: 'dashboardDashboardManageAccounts',
 			component: dashboardManageAccountsView,
+			meta: { authRequired: DefineAuthType.Auth },
+		},
+		{
+			path: '/dashboard/Dashboard/files',
+			name: 'dashboardDashboardManageFiles',
+			component: dashboardManageFilesView,
 			meta: { authRequired: DefineAuthType.Auth },
 		},
 		{
