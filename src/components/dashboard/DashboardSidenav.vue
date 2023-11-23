@@ -5,95 +5,170 @@ const props = defineProps(['active']);
 </script>
 
 <template>
-	<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3" id="sidenav-main">
+	<aside
+		class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3"
+		id="sidenav-main"
+	>
 		<div class="sidenav-header">
-			<i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+			<i
+				class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+				aria-hidden="true"
+				id="iconSidenav"
+			></i>
 			<RouterLink to="/" class="navbar-brand m-0">
-				<img src="https://cdn.hwahyang.space/hspace_v2/images/HwaHyang_19_Alpha.gif" class="navbar-brand-img h-100" alt="main_logo">
+				<img
+					src="https://cdn.meowlabs.kr/hspace_v2/images/HwaHyang_19_Alpha.gif"
+					class="navbar-brand-img h-100"
+					alt="main_logo"
+				/>
 				<span class="ms-1 font-weight-bold Pretendard-Bold">dash.hwahyang.space</span>
 			</RouterLink>
 		</div>
 		<hr class="horizontal dark mt-0" />
-		<div style="height: auto;" class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+		<div
+			style="height: auto"
+			class="collapse navbar-collapse w-auto"
+			id="sidenav-collapse-main"
+		>
 			<ul class="navbar-nav">
 				<li class="nav-item mt-3">
-					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Dashboard</h6>
+					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">
+						Dashboard
+					</h6>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard" class="nav-link" :class="{'active': props.active === 'dashboard-root' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-root' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-chart-pie"></i>
 						</div>
 						<span class="nav-link-text ms-1">Home</span>
 					</RouterLink>
 				</li>
-				
+
 				<li class="nav-item mt-3">
-					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">hwahyang.space</h6>
+					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">
+						hwahyang.space
+					</h6>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Main/analytics" class="nav-link" :class="{'active': props.active === 'dashboard-main-analytics' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Main/analytics"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-main-analytics' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-chart-line"></i>
 						</div>
 						<span class="nav-link-text ms-1">Analytics</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Main/about" class="nav-link" :class="{'active': props.active === 'dashboard-main-about' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Main/about"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-main-about' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-user-pen"></i>
 						</div>
 						<span class="nav-link-text ms-1">Edit About</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Main/links" class="nav-link" :class="{'active': props.active === 'dashboard-main-links' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Main/links"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-main-links' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-link"></i>
 						</div>
 						<span class="nav-link-text ms-1">Edit Links</span>
 					</RouterLink>
 				</li>
-				
+
 				<li class="nav-item mt-3">
-					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">pf.hwahyang.space</h6>
+					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">
+						pf.hwahyang.space
+					</h6>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Portfolio/analytics" class="nav-link" :class="{'active': props.active === 'dashboard-portfolio-analytics' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Portfolio/analytics"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-portfolio-analytics' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-chart-line"></i>
 						</div>
 						<span class="nav-link-text ms-1">Analytics</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Portfolio/cover" class="nav-link" :class="{'active': props.active === 'dashboard-portfolio-cover' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Portfolio/cover"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-portfolio-cover' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-pen-to-square"></i>
 						</div>
 						<span class="nav-link-text ms-1">Edit Cover</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Portfolio/about" class="nav-link" :class="{'active': props.active === 'dashboard-portfolio-about' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Portfolio/about"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-portfolio-about' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-user-pen"></i>
 						</div>
 						<span class="nav-link-text ms-1">Edit About</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Portfolio/services" class="nav-link" :class="{'active': props.active === 'dashboard-portfolio-services' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Portfolio/services"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-portfolio-services' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-calendar-check"></i>
 						</div>
 						<span class="nav-link-text ms-1">Edit Services</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Portfolio/articles" class="nav-link" :class="{'active': props.active === 'dashboard-portfolio-articles' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Portfolio/articles"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-portfolio-articles' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-file-pen"></i>
 						</div>
 						<span class="nav-link-text ms-1">Edit Portfolio</span>
@@ -101,27 +176,47 @@ const props = defineProps(['active']);
 				</li>
 
 				<li class="nav-item mt-3">
-					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">blog.hwahyang.space</h6>
+					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">
+						blog.hwahyang.space
+					</h6>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Blog/analytics" class="nav-link" :class="{'active': props.active === 'dashboard-blog-analytics' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Blog/analytics"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-blog-analytics' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-chart-line"></i>
 						</div>
 						<span class="nav-link-text ms-1">Analytics</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Blog/category" class="nav-link" :class="{'active': props.active === 'dashboard-blog-category' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Blog/category"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-blog-category' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-list-ul"></i>
 						</div>
 						<span class="nav-link-text ms-1">Manage Category</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/Blog/posts" class="nav-link" :class="{'active': props.active === 'dashboard-blog-posts' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/Blog/posts"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-blog-posts' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-file-lines"></i>
 						</div>
 						<span class="nav-link-text ms-1">Manage Posts</span>
@@ -129,43 +224,75 @@ const props = defineProps(['active']);
 				</li>
 
 				<li class="nav-item mt-3">
-					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">dash.hwahyang.space</h6>
+					<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">
+						dash.hwahyang.space
+					</h6>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/DashBoard/analytics" class="nav-link" :class="{'active': props.active === 'dashboard-dashboard-analytics' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/DashBoard/analytics"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-dashboard-analytics' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-chart-line"></i>
 						</div>
 						<span class="nav-link-text ms-1">Analytics</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/DashBoard/me" class="nav-link" :class="{'active': props.active === 'dashboard-dashboard-me' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/DashBoard/me"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-dashboard-me' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-user"></i>
 						</div>
 						<span class="nav-link-text ms-1">My Account</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/DashBoard/files" class="nav-link" :class="{'active': props.active === 'dashboard-dashboard-files' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/DashBoard/files"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-dashboard-files' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-file"></i>
 						</div>
 						<span class="nav-link-text ms-1">Manage Files</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/DashBoard/accounts" class="nav-link" :class="{'active': props.active === 'dashboard-dashboard-accounts' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/DashBoard/accounts"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-dashboard-accounts' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-users"></i>
 						</div>
 						<span class="nav-link-text ms-1">Manage Accounts</span>
 					</RouterLink>
 				</li>
 				<li class="nav-item">
-					<RouterLink to="/dashboard/DashBoard/approvalCodes" class="nav-link" :class="{'active': props.active === 'dashboard-dashboard-approvalCodes' }">
-						<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+					<RouterLink
+						to="/dashboard/DashBoard/approvalCodes"
+						class="nav-link"
+						:class="{ active: props.active === 'dashboard-dashboard-approvalCodes' }"
+					>
+						<div
+							class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center"
+						>
 							<i class="fa-solid fa-ticket"></i>
 						</div>
 						<span class="nav-link-text ms-1">Manage Approval Codes</span>

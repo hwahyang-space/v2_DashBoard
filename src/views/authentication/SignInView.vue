@@ -24,7 +24,9 @@ import AuthenticationAlert from '@/components/authentication/AuthenticationAlert
 						<div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
 							<div class="card card-plain mt-8">
 								<div class="card-header pb-0 text-left bg-transparent">
-									<h3 class="font-weight-bolder text-primary text-gradient Pretendard-Black">
+									<h3
+										class="font-weight-bolder text-primary text-gradient Pretendard-Black"
+									>
 										Welcome back!
 									</h3>
 									<p class="mb-0 Pretendard-Medium">
@@ -36,36 +38,82 @@ import AuthenticationAlert from '@/components/authentication/AuthenticationAlert
 									<form role="form" @submit.prevent="onSubmit(email, password)">
 										<label for="email">Email</label>
 										<div class="mb-3">
-											<input type="email" v-model="email" id="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon" />
+											<input
+												type="email"
+												v-model="email"
+												id="email"
+												class="form-control"
+												placeholder="Email"
+												aria-label="Email"
+												aria-describedby="email-addon"
+											/>
 										</div>
 										<label for="password">Password</label>
 										<div class="mb-3">
-											<input type="password" v-model="password" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" />
+											<input
+												type="password"
+												v-model="password"
+												id="password"
+												class="form-control"
+												placeholder="Password"
+												aria-label="Password"
+												aria-describedby="password-addon"
+											/>
 										</div>
 										<div class="form-check form-switch">
-											<input class="form-check-input" type="checkbox" v-model="rememberMe" id="rememberMe" />
-											<label class="form-check-label" for="rememberMe">Remember me</label>
+											<input
+												class="form-check-input"
+												type="checkbox"
+												v-model="rememberMe"
+												id="rememberMe"
+											/>
+											<label class="form-check-label" for="rememberMe"
+												>Remember me</label
+											>
 										</div>
 										<div class="text-center Pretendard-Bold">
-											<button type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0">
+											<button
+												type="submit"
+												class="btn bg-gradient-primary w-100 mt-4 mb-0"
+											>
 												Sign In
 											</button>
 										</div>
 									</form>
 								</div>
-								<div class="card-footer text-center pt-0 px-lg-2 px-1 Pretendard-Regular">
+								<div
+									class="card-footer text-center pt-0 px-lg-2 px-1 Pretendard-Regular"
+								>
 									<p class="mb-4 text-sm mx-auto">
-										Don't have an account? <RouterLink to="/Authentication/SignUp" id="linkText-card" class="text-primary text-gradient font-weight-bolder">Sign Up</RouterLink>
+										Don't have an account?
+										<RouterLink
+											to="/Authentication/SignUp"
+											id="linkText-card"
+											class="text-primary text-gradient font-weight-bolder"
+											>Sign Up</RouterLink
+										>
 									</p>
 									<p class="mb-4 text-sm mx-auto">
-										Inquiry: <a class="text-dark font-weight-bolder" href="mailto:me@hwahyang.space">me@hwahyang.space</a>
+										Inquiry:
+										<a
+											class="text-dark font-weight-bolder"
+											href="mailto:me@hwahyang.space"
+											>me@hwahyang.space</a
+										>
 									</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6">
-							<div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
-								<div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image: url('https://cdn.hwahyang.space/hspace_v2/images/20200902_B.png?v=2023082501');"></div>
+							<div
+								class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8"
+							>
+								<div
+									class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
+									style="
+										background-image: url('https://cdn.meowlabs.kr/hspace_v2/images/20200902_B.png?v=2023082501');
+									"
+								></div>
 							</div>
 						</div>
 					</div>
@@ -125,7 +173,7 @@ export default {
 					const urlParams = new URLSearchParams(window.location.search);
 					let redirect = urlParams.get('redirect');
 					if (!redirect || !regex.test(redirect)) redirect = '/';
-					
+
 					window.location.href = redirect ?? '/';
 				}
 			} catch (error) {
